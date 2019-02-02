@@ -1,0 +1,8 @@
+---
+- name: Pull tomcat image
+  hosts: localhost 
+  tasks:
+  - name: pull_image
+    docker_image:
+     name: tomcat:8-jre8
+...

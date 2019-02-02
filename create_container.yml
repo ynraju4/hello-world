@@ -1,0 +1,23 @@
+---
+- name: Create Container
+  hosts: docker 
+  tasks: 
+  - name: Stop a container
+    docker_container:
+     name: hello-world
+     state: absent
+  - name: Remove latest image
+    docker_image:
+     state: absent
+     name: ynraju4/hello-world
+     tag: latest
+  - name: web container
+    docker_container: 
+     name: hello-world
+     image: ynraju4/hello-world:latest
+     state: started
+     ports:
+      - "8005:8080"
+     tty: true
+     detach: true
+...

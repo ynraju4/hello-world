@@ -1,0 +1,11 @@
+---
+- name: Create web image
+  hosts: localhost
+  tasks:
+  - name: Build image
+    uri:
+     url: http://34.207.88.251:8005/webapp 
+     return_content: yes
+    register: this
+    failed_when: "'This is Sample Maven Project' not in this.content"
+...

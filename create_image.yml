@@ -1,0 +1,32 @@
+---
+- name: Create web image
+  hosts: localhost
+  tasks:
+  - name: Build image
+    docker_image:
+     path: /home/ansadmin 
+     name: ynraju4/hello-world
+     tag: v9
+     push: yes
+  - name: Build image
+    docker_image:
+     path: /home/ansadmin
+     name: ynraju4/hello-world
+     tag: latest
+     push: yes
+  - name: Remove versioned image 
+    docker_image:
+     state: absent
+     name: ynraju4/hello-world
+     tag: v9
+  - name: Remove latest image
+    docker_image:
+     state: absent
+     name: ynraju4/hello-world
+     tag: latest
+  - name: Remove base tomcat image
+    docker_image:
+     state: absent
+     name: tomcat
+     tag: 8-jre8
+...
