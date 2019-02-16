@@ -1,5 +1,5 @@
-<font size="3" color="red">This is some text!</font>
-<font size="2" color="blue">This is some text!</font>
+<h1><font size="4" color="red">Hello, This is Nagaraju Yarlagadda!!</font></h1>
+<font size="4" color="blue">This is Sample Maven Project</font>
 <font face="verdana" color="green">This is some text!</font>
 
 
